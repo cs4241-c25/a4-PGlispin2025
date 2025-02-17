@@ -1,8 +1,9 @@
 import React from "react";
+import API_BASE_URL from "../api";
 
 function Navbar() {
   const logout = async () => {
-    await fetch("http://localhost:3001/logout", { method: "POST", credentials: "include" });
+    await fetch(`${API_BASE_URL}/logout`, { method: "POST", credentials: "include" });
     window.location.href = "/";
   }
 
