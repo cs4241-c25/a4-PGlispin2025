@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>To-Do List</title>
+    <meta charset="utf-8">
+    <script src="js/main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen pt-6">
+    <h1 class="text-5xl font-extrabold text-center text-blue-400 drop-shadow-lg mb-6">To-Do List</h1>
+
+    <div id="authSection" class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-lg text-center">
+        <h2 class="text-2xl font-semibold mb-4">Login</h2>
+        <input class="p-2 mb-2 rounded w-full text-black" type="text" id="username" placeholder="Username">
+        <input class="p-2 mb-2 rounded w-full text-black" type="password" id="password" placeholder="Password">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded w-full hover:bg-blue-600 transition mb-2" onclick="login()">Login</button>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded w-full hover:bg-blue-600 transition" onclick="register()">Register</button>
+    </div>
+
+    <div id="taskSection" class="hidden bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
+        <button class="bg-red-500 text-white px-4 py-2 rounded w-full mb-4 hover:bg-red-600 transition" onclick="logout()">Logout</button>
+        <form id="todoForm" class="mb-4">
+            <label for="task" class="block text-lg font-semibold">Task: </label>
+            <input type="text" id="task" class="p-2 rounded w-full text-black border border-gray-600 focus:border-blue-400 focus:ring-1 focus:ring-blue-400" required>
+            <label for="priority" class="block text-lg font-semibold mt-2">Priority: </label>
+            <select id="priority" class="p-2 rounded w-full text-black border border-gray-600 focus:border-blue-400 focus:ring-1 focus:ring-blue-400">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded w-full mt-4 hover:bg-blue-600 transition">Add Task</button>
+        </form>
+        <h2 class="text-2xl font-semibold">To Do:</h2>
+        <ul id="taskList" class="space-y-2 mt-2"></ul>
+    </div>
+
+</body>
+</html>
