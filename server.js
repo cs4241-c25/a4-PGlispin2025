@@ -89,7 +89,7 @@ app.get("/auth/check", (req, res) => {
     }
 });
 
-app.get("/tasks", isAuthenticated, async (req, res) => {
+app.get("api/tasks", isAuthenticated, async (req, res) => {
     try {
         const tasks = await Task.find({ userId: req.user._id });
         res.json(tasks);
@@ -182,11 +182,11 @@ app.post("/logout", (req, res) => {
     })
 });
 
-if (process.env.NODE_ENV === "production"){
+if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "client/build")));
 
     app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname, "client/build", "index.html"));
+        res.sendFile(path.join(__dirname, "client", "build", "index.html"));
     });
 }
 

@@ -22,7 +22,7 @@ function TaskList() {
 
 	useEffect(() => {
 		if(isAuthenticated) {
-			fetch(`${API_BASE_URL}/tasks`, { credentials: "include" })
+			fetch(`${API_BASE_URL}/api/tasks`, { credentials: "include" })
 				.then((res) => {
 					if(!res.ok){
 						throw new Error("Unauthorized");
